@@ -34,8 +34,7 @@
     posterType: 'detect',
     resizing: true,
     bgColor: 'transparent',
-    className: '',
-    playsinline: true
+    className: ''
   };
 
   /**
@@ -297,9 +296,9 @@
         sources += '<source src="' + path.ogv + '.ogv" type="video/ogg">';
       }
 
-      $video = vide.$video = $('<video>' + sources + '</video>');
+      $video = vide.$video = $('<video playsinline>' + sources + '</video>');
     } else {
-      $video = vide.$video = $('<video>' +
+      $video = vide.$video = $('<video playsinline>' +
         '<source src="' + path + '.mp4" type="video/mp4">' +
         '<source src="' + path + '.webm" type="video/webm">' +
         '<source src="' + path + '.ogv" type="video/ogg">' +
@@ -318,8 +317,7 @@
           muted: settings.muted,
           defaultMuted: settings.muted,
           playbackRate: settings.playbackRate,
-          defaultPlaybackRate: settings.playbackRate,
-          playsinline: settings.playsinline
+          defaultPlaybackRate: settings.playbackRate
         });
     } catch (e) {
       throw new Error(NOT_IMPLEMENTED_MSG);
@@ -338,7 +336,6 @@
       transform: 'translate(-' + position.x + ', -' + position.y + ')',
 
       // Disable visibility, while loading
-      visibility: 'hidden',
       opacity: 0
     })
 
@@ -350,7 +347,6 @@
     // Make it visible, when it's already playing
     .one('playing.' + PLUGIN_NAME, function() {
       $video.css({
-        visibility: 'visible',
         opacity: 1
       });
       $wrapper.css('background-image', 'none');
