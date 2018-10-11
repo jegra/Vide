@@ -34,7 +34,8 @@
     posterType: 'detect',
     resizing: true,
     bgColor: 'transparent',
-    className: ''
+    className: '',
+    playsinline: true
   };
 
   /**
@@ -317,7 +318,8 @@
           muted: settings.muted,
           defaultMuted: settings.muted,
           playbackRate: settings.playbackRate,
-          defaultPlaybackRate: settings.playbackRate
+          defaultPlaybackRate: settings.playbackRate,
+          playsinline: settings.playsinline
         });
     } catch (e) {
       throw new Error(NOT_IMPLEMENTED_MSG);

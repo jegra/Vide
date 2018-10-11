@@ -1,10 +1,11 @@
 {
   "name": "vide",
-  "homepage": "http://vodkabears.github.io/vide/",
+  "homepage": "https://github.com/jegra/Vide.git",
   "authors": [
-    "Ilya Makarov <dfrost.00@gmail.com>"
+    "Ilya Makarov <dfrost.00@gmail.com>",
+    "Joe Grassia"
   ],
-  "description": "Easy as hell jQuery plugin for video backgrounds.",
+  "description": "jQuery plugin for video backgrounds, updated for mobile autoplay.",
   "main": "dist/jquery.vide.js",
   "ignore": [
     "**/.*",

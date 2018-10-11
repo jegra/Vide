@@ -1,8 +1,10 @@
 # Vide
 
-Easy as hell jQuery plugin for video backgrounds.
+jQuery plugin for video backgrounds, updated for mobile autoplay.
 
 ## Notes
+
+Based on the vodkabears/Vide package.
 
 * All modern desktop browsers are supported.
 * IE9+
@@ -14,7 +16,7 @@ disabled, only fullscreen poster will be used.
 ## Install
 
 ```sh
-meteor add vodkabears:vide
+meteor add jegra:vide
 ```
 
 ## Usage
@@ -54,7 +56,7 @@ Below is a complete list of options and matching default values:
   autoplay: true,
   position: '50% 50%', // Similar to the CSS `background-position` property.
   posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
-  resizing: true // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
+  resizing: true // Auto-resizing, read: https://github.com/jegra/Vide#resizing
 }
 ```
 
@@ -81,4 +83,4 @@ instance.destroy();
 ## More Info
 
 See full documentation on
-[Github](https://github.com/VodkaBears/Vide).
+[Github](https://github.com/jegra/Vide).

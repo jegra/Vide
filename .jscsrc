@@ -65,7 +65,7 @@
   },
   "requirePaddingNewLinesAfterBlocks": true,
   "requireSemicolons": true,
-  "validateLineBreaks": "LF",
+  "validateLineBreaks": null,
   "validateQuoteMarks": "'",
   "validateIndentation": 2
 }

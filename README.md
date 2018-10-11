@@ -4,9 +4,8 @@
 Vide
 ====
 
-**No longer actively maintained. I am not interested to maintain jQuery plugins anymore. If you have some fixes, feel free to make PR.**
-
-Easy as hell jQuery plugin for video backgrounds.
+This is a slightly modified version of the vodkabears/Vide plugin.  It adds support for 'playsinline', to allow for autoplay
+on mobile devices.  
 
 ## Notes
 
@@ -81,7 +80,8 @@ Below is a complete list of options and matching default values:
   posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
   resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
   bgColor: 'transparent', // Allow custom background-color for Vide div,
-  className: '' // Add custom CSS class to Vide div
+  className: '', // Add custom CSS class to Vide div,
+  playsinline: true  // Allow for autoplay on mobile devices
 }
 ```
 

@@ -1,7 +1,7 @@
 {
   "name": "vide",
-  "version": "0.5.1",
-  "description": "Easy as hell jQuery plugin for video backgrounds.",
+  "version": "0.1.0",
+  "description": "jQuery plugin for video backgrounds, updated for mobile autoplay",
   "keywords": [
     "jquery-plugin",
     "jquery",
@@ -14,15 +14,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/VodkaBears/Vide.git"
+    "url": "https://github.com/jegra/Vide.git"
   },
   "bugs": {
-    "url": "https://github.com/VodkaBears/Vide/issues"
+    "url": "https://github.com/jegra/Vide/issues"
   },
   "author": {
     "name": "Ilya Makarov",
     "email": "dfrost.00@gmail.com",
-    "url": "https://github.com/VodkaBears"
+    "url": "https://github.com/jegra"
   },
   "homepage": "http://vodkabears.github.io/vide/",
   "license": "MIT",
@@ -45,8 +45,8 @@
     "spacejam": "^1.2.2"
   },
   "scripts": {
-    "start": "npm install && ./node_modules/.bin/bower install && ./node_modules/.bin/grunt githooks",
-    "test": "./node_modules/.bin/grunt test",
-    "dist": "./node_modules/.bin/grunt"
+    "start": "npm install && bower install",
+    "test": "grunt test",
+    "dist": "grunt --force"
   }
 }

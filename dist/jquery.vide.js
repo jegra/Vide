@@ -1,6 +1,6 @@
 /*
- *  Vide - v0.5.1
- *  Easy as hell jQuery plugin for video backgrounds.
+ *  Vide - v0.1.0
+ *  jQuery plugin for video backgrounds, updated for mobile autoplay
  *  http://vodkabears.github.io/vide/
  *
  *  Made by Ilya Makarov
@@ -42,7 +42,8 @@
     posterType: 'detect',
     resizing: true,
     bgColor: 'transparent',
-    className: ''
+    className: '',
+    playsinline: true
   };
 
   /**
@@ -325,7 +326,8 @@
           muted: settings.muted,
           defaultMuted: settings.muted,
           playbackRate: settings.playbackRate,
-          defaultPlaybackRate: settings.playbackRate
+          defaultPlaybackRate: settings.playbackRate,
+          playsinline: settings.playsinline
         });
     } catch (e) {
       throw new Error(NOT_IMPLEMENTED_MSG);
