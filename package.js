@@ -3,7 +3,7 @@ Package.describe({
   git: 'https://github.com/jegra/Vide.git',
   name: 'jegra:vide',
   summary: 'jQuery plugin for video backgrounds, updated for mobile autoplay',
-  version: '0.1.0'
+  version: '1.1.1'
 });
 
 Package.onUse(function(api) {
