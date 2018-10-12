@@ -76,12 +76,14 @@ Below is a complete list of options and matching default values:
   muted: true,
   loop: true,
   autoplay: true,
-  position: '50% 50%', // Similar to the CSS `background-position` property.
-  posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
-  resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
-  bgColor: 'transparent', // Allow custom background-color for Vide div,
-  className: '', // Add custom CSS class to Vide div,
-  playsinline: true  // Allow for autoplay on mobile devices
+  position: '50% 50%',      // Similar to the CSS `background-position` property.
+  posterType: 'detect',     // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
+  resizing: true,           // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
+  bgColor: 'transparent',   // Allow custom background-color for Vide div,
+  className: '',            // Add custom CSS class to Vide div,
+  playsinline: true,        // Allow for autoplay on mobile devices
+  fadeIn: true,             // Allow for fading in of the wrapper element (contains both poster and video)
+  fadeInDuration: '1s'      // Adjust the fade-in speed
 }
 ```
 
