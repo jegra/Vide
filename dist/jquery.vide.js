@@ -40,6 +40,8 @@
     autoplay: true,
     position: '50% 50%',
     posterType: 'detect',
+    fadeIn: true,
+    fadeInDuration: '1s',
     resizing: true,
     bgColor: 'transparent',
     className: ''
@@ -237,6 +239,8 @@
     var settings = vide.settings;
     var position = parsePosition(settings.position);
     var posterType = settings.posterType;
+    var fadeIn = settings.fadeIn;
+    var fadeInDuration = settings.fadeInDuration;
     var $video;
     var $wrapper;
 
@@ -257,8 +261,17 @@
         'background-size': 'cover',
         'background-color': settings.bgColor,
         'background-repeat': 'no-repeat',
-        'background-position': position.x + ' ' + position.y
+        'background-position': position.x + ' ' + position.y,
+        WebkitTransition: 'opacity ' + fadeInDuration + ' ease-in-out',
+        MozTransition: 'opacity ' + fadeInDuration + ' ease-in-out',
+        MsTransition: 'opacity ' + fadeInDuration + ' ease-in-out',
+        OTransition: 'opacity ' + fadeInDuration + ' ease-in-out',
+        transition: 'opacity ' + fadeInDuration + ' ease-in-out'
       });
+
+    if (fadeIn) {
+        $wrapper.css('opacity', 0);
+    }
 
     // Get a poster path
     if (typeof path === 'object') {
@@ -276,12 +289,31 @@
     }
 
     // Set a video poster
+    var posterUrl = '';
     if (posterType === 'detect') {
       findPoster(poster, function(url) {
-        $wrapper.css('background-image', 'url(' + url + ')');
+        posterUrl = url;
       });
     } else if (posterType !== 'none') {
-      $wrapper.css('background-image', 'url(' + poster + '.' + posterType + ')');
+      posterUrl = poster + '.' + posterType;
+    }
+
+    // Load the image
+
+    function fadeInWrapper() {
+        setTimeout(function() {
+            $wrapper.css('opacity', 1);
+        }, 10);
+    }
+
+    if (posterType !== 'none' && posterUrl !== '') {
+        $('<img/>').attr('src', posterUrl).on('load', function () {
+            $(this).remove(); // prevent memory leaks
+            $wrapper.css('background-image', 'url(' + posterUrl + ')');
+            if (fadeIn) {
+                fadeInWrapper();
+            }
+        });
     }
 
     // If a parent element has a static position, make it relative
@@ -358,6 +390,9 @@
         opacity: 1
       });
       $wrapper.css('background-image', 'none');
+      if (fadeIn) {
+        fadeInWrapper();
+      }
     });
 
     // Resize event is available only for 'window'
