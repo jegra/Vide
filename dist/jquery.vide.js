@@ -286,7 +286,7 @@
           poster = path.ogv;
         }
       }
-      console.log ('poster path', poster);
+      // console.log ('poster path', poster);
     }
 
     // Set a video poster
