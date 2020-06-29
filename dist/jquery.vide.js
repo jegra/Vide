@@ -286,6 +286,7 @@
           poster = path.ogv;
         }
       }
+      console.log ('poster path', poster);
     }
 
     // Set a video poster
@@ -324,16 +325,35 @@
     $element.prepend($wrapper);
 
     if (typeof path === 'object') {
+      let vidPath;
       if (path.mp4) {
-        sources += '<source src="' + path.mp4 + '.mp4" type="video/mp4">';
+        // JG Edit - allow for query string params on path
+        vidPath = path.mp4;
+        if (vidPath.indexOf('.mp4') === -1) {
+          // No extension is present - need to add
+          vidPath += '.mp4';
+        }
+        sources += '<source src="' + vidPath + '" type="video/mp4">';
       }
 
       if (path.webm) {
-        sources += '<source src="' + path.webm + '.webm" type="video/webm">';
+        // JG Edit - allow for query string params on path
+        vidPath = path.webm;
+        if (vidPath.indexOf('.webm') === -1) {
+          // No extension is present - need to add
+          vidPath += '.webm';
+        }
+        sources += '<source src="' + vidPath + '" type="video/webm">';
       }
 
       if (path.ogv) {
-        sources += '<source src="' + path.ogv + '.ogv" type="video/ogg">';
+        // JG Edit - allow for query string params on path
+        vidPath = path.ogv;
+        if (vidPath.indexOf('.ogv') === -1) {
+          // No extension is present - need to add
+          vidPath += '.ogv';
+        }
+        sources += '<source src="' + vidPath + '" type="video/ogg">';
       }
 
       $video = vide.$video = $('<video playsinline>' + sources + '</video>');
